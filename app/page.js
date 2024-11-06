@@ -7,19 +7,21 @@ import ProjectOverview from "./ProjectOverview";
 const items = [
   {
     sl: 1,
-    title: `Project 1`,
-    description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. \n Enim eius dicta in modi id? Quo nobis corporis deserunt voluptates eos vitae dolor. Quae fugiat suscipit est debitis maxime accusantium vero!`,
+    title: `Aim Assist with Pytorch`,
+    description: `Enemy object detection with Yolov3. Program runs concurrently with game window to detect and display enemies during live runtime. Auto fires at detected enemies.`,
     image: "https://picsum.photos/500",
     alt: "Hero Image",
     link: "/about",
+    buttonText: 'About Pytorch'
   },
   {
     sl: 2,
-    title: `Project 2`,
-    description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. \n Enim eius dicta in modi id? Quo nobis corporis deserunt voluptates eos vitae dolor. Quae fugiat suscipit est debitis maxime accusantium vero!\n Enim eius dicta in modi id? Quo nobis corporis deserunt voluptates eos vitae dolor. Quae fugiat suscipit est debitis maxime accusantium vero!`,
+    title: `Machine Learning Sandbox`,
+    description: `App to use different models to predict future matchups or back test with historical data of international soccer matches. Includes informative data visualization of outputs.`,
     image: "https://picsum.photos/500",
     alt: "Hero Image",
     link: "/about",
+    buttonText: 'About Sandbox'
   }
 ]
 

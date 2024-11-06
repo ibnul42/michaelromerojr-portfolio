@@ -28,8 +28,17 @@ export default function Header() {
     }
   }, [pathname, setIsHome]);
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf';
+    link.download = 'Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <header className={`${isHome ? 'bg-white/10 backdrop-blur-sm' : 'bg-sky-300'} text-white shadow-md z-50`}>
+    <header className={`${isHome ? 'bg-white/10 backdrop-blur-sm text-sky-600' : 'bg-sky-300'} shadow-md z-50`}>
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
         <div className="text-2xl font-bold">
@@ -39,28 +48,28 @@ export default function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className={`hidden md:flex space-x-8 ${isHome ? 'text-sky-700' : ' text-white'}`}>
           <Link
             href="/"
-            className={`no-underline ${isActive('/') ? 'text-pink-500' : 'hover:text-gray-500 text-white'}`}
+            className={`no-underline ${isActive('/') ? 'text-pink-500' : 'hover:scale-[1.02]'}`}
           >
             Home
           </Link>
           <Link
             href="/about"
-            className={`no-underline ${isActive('/about') ? 'text-pink-500' : 'hover:text-gray-500 text-white'}`}
+            className={`no-underline ${isActive('/about') ? 'text-pink-500' : 'hover:scale-[1.02]'}`}
           >
             About
           </Link>
           <Link
             href="/projects"
-            className={`no-underline ${isActive('/projects') ? 'text-pink-500' : 'hover:text-gray-500 text-white'}`}
+            className={`no-underline ${isActive('/projects') ? 'text-pink-500' : 'hover:scale-[1.02]'}`}
           >
             Projects
           </Link>
           <Link
             href="/contact"
-            className={`no-underline ${isActive('/contact') ? 'text-pink-500' : 'hover:text-gray-500 text-white'}`}
+            className={`no-underline ${isActive('/contact') ? 'text-pink-500' : 'hover:scale-[1.02]'}`}
           >
             Contact
           </Link>
@@ -68,11 +77,11 @@ export default function Header() {
 
         {/* Hire me */}
         <Button
-          onClick={() => console.log("object")}
-          className={`hidden md:flex gap-2 items-center w-36 group bg-transparent border border-sky-500 ${isHome ? 'text-white hover:text-white' : 'text-white'}`}
+          onClick={handleDownload}
+          className={`hidden md:flex gap-2 items-center w-48 group bg-transparent border border-sky-500 ${isHome ? 'text-sky-600 hover:text-white' : 'text-white'}`}
         >
           <FiMessageCircle className='h-5 w-5' fill='#7dd3fc' />
-          <span className='flex-grow uppercase tracking-wide group-hover:tracking-widest group-hover:font-medium transition-all'>Hire me</span>
+          <span className='flex-grow uppercase tracking-wide group-hover:tracking-wider group-hover:font-medium transition-all text-xs'>Resume download</span>
         </Button>
 
         {/* Mobile Menu Button */}
