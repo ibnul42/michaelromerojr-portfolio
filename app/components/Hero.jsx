@@ -15,15 +15,15 @@ const Hero = () => {
     <div className="h-screen w-full flex bg-cover bg-center -mt-[72px] md:-mt-[82px] -z-10"
     // style={{ backgroundImage: 'url(/assets/hero.jpg)' }}
     >
-      <div className="flex-1 max-w-[1920px] mx-auto grid grid-cols-2 gap-10 h-full w-full">
-        <div className="flex flex-col justify-center items-center">
+      <div className="flex-1 max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 h-full w-full">
+        <div className="flex flex-col justify-center items-center order-2 md:order-1">
           <div className="w-full max-w-80 px-2 flex flex-col items-start gap-4">
             <RenderItem>
               <h1 className="text-5xl font-bold text-sky-700">Alex Smith</h1>
             </RenderItem>
             <RenderItem delay={0.85}>
               <div className="flex gap-2 text-sky-700">
-                <p className='text-[2em]'>I&apos;m a </p>
+                <p className='text-lg md:text-[2em]'>I&apos;m a </p>
                 <TypeAnimation
                   sequence={[
                     `Developer`,
@@ -35,9 +35,9 @@ const Hero = () => {
                   ]}
                   wrapper="span"
                   speed={30}
-                  style={{ fontSize: '2em', display: 'inline-block', borderBottom: '1.5px solid #38bdf8', }}
+                  style={{ display: 'inline-block', borderBottom: '1.5px solid #38bdf8', }}
                   repeat={Infinity}
-                  className='text-sky-700'
+                  className='text-sky-700 text-lg md:text-[2em]'
                 />
               </div>
             </RenderItem>
@@ -71,7 +71,7 @@ const Hero = () => {
             </RenderItem>
           </div>
         </div>
-        <div className="flex h-full justify-center items-center">
+        <div className="flex h-full justify-center items-center order-1 md:order-2 py-3">
           <Image src='/assets/profile.png' height={500} width={500} alt='' className='' />
         </div>
       </div>
