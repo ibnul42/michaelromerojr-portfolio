@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { HomeContextProvider } from "./home-context";
 import PageCheck from "./PageCheck";
+import ToastProvider from "./components/ToasterContainer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,11 +29,13 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen w-screen overflow-y-auto overflow-x-hidden`}
       >
         <HomeContextProvider>
-          <Header />
-          <PageCheck>
-            {children}
-          </PageCheck>
-          <Footer />
+          <ToastProvider>
+            <Header />
+            <PageCheck>
+              {children}
+            </PageCheck>
+            <Footer />
+          </ToastProvider>
         </HomeContextProvider>
       </body>
     </html>
